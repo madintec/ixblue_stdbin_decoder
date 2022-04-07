@@ -11,7 +11,8 @@
 TEST_F(TestStdBinDecoderErrorRecovery, RecoveryFromBadCheckSum){
     // add bad frame to buffer
     this->addNewDataFrame(BAD_CHECK_SUM);
-    this->testIsErrorIsThrown(0);
+    ssize_t cleaned_buffer_size = BAD_CHECK_SUM.size() - 1;
+    this->testIsErrorIsThrown(cleaned_buffer_size);
 
     this->testFramesErrorRecovery();
 }
