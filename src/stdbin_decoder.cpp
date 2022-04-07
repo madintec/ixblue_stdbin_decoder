@@ -276,8 +276,8 @@ void StdBinDecoder::compareChecksum()
 
     if(receivedChecksum != computedChecksum)
     {
-        // Remove the parsed telegram from the buffer
-        internalBuffer.erase_begin(lastHeader.telegramSize);
+        // No valid checksum, pop one byte at the front of the buffer
+        internalBuffer.pop_front();
 
         std::ostringstream ss;
         ss << "Bad checksum. Received: 0x" << std::hex << receivedChecksum
