@@ -2,12 +2,18 @@
 Changelog for package ixblue_stdbin_decoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.2.1 (2022-04-4)
+0.2.2 (2022-04-07)
+------------------
+* Update test according to new cleaned size in recovery checksum
+* Fix checksum exception error with cleaning buffer with one byte instead of telegram size
+* Contributors: Foissac Nicola
+
+0.2.1 (2022-04-04)
 ------------------
 * Fix example in readme use wrong function.
 * Bump package.xml version to 0.2.1
 * Fix bad protocol exception looping error with cleaning buffer with only one byte
-* Fix checksum exception  looping error with cleaning buffer with telegram size
+* Fix checksum exception looping error with cleaning buffer with telegram size
 * Add feature test class to merge each error recovery testing code
 * Add test case to validate recovery :
    * bad checksum recovery
